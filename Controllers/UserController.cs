@@ -13,13 +13,6 @@ public class UserController(
     ApplicationDbContext db
 ) : Controller
 {
-
-    [HttpGet]
-    public IActionResult Index()
-    {
-        return View();
-    }
-
     [HttpGet("{userId:long}")]
     public async Task<ActionResult<RegisteredUser>> GetUser(long userId)
     {
