@@ -1,6 +1,5 @@
 using ChatAppBackend.Data;
 using ChatAppBackend.Models;
-using IdGen;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;

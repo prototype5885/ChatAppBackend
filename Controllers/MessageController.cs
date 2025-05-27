@@ -1,8 +1,6 @@
-﻿using System.Security.Claims;
-using ChatAppBackend.Data;
+﻿using ChatAppBackend.Data;
 using ChatAppBackend.Hubs;
 using ChatAppBackend.Models;
-using IdGen;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -39,7 +37,6 @@ public class MessageController(
         await db.SaveChangesAsync();
 
         await signalr.Clients.All.SendAsync($"message/{data.ChannelId}", message);
-
     }
 
     [HttpGet("All/{channelId:long}")]
