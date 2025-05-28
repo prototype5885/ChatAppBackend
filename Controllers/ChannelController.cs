@@ -33,7 +33,7 @@ public class ChannelController(
         return Ok(channel);
     }
 
-    [HttpGet("All/{serverId}")]
+    [HttpGet("All/{serverId:long}")]
     public async Task<IActionResult> EnteredServer(long serverId)
     {
         var channels = await db.Channels.Where(channel => channel.ServerId == serverId).ToListAsync();
